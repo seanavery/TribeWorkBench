@@ -3,7 +3,44 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+console.log("electron is: " + electron)
+console.log("app is: " + app)
+// launch local ethereum node
+// const geth = require('child_process').spawn('/usr/local/bin/geth', ['--testnet'])
+//
+// geth.stdout.on('data', (data) => {
+//   console.log(data)
+// })
+//
+// geth.stderr.setEncoding('utf-8')
+//
+// geth.stderr.on('data', (data) => {
+//   console.log(data)
+// })
+// geth.on('close', (code) => {
+//   console.log('Ethereum process exited with code: ' + code)
+// })
 
+
+// call on ethereum node using web3
+const Web3 = require('web3')
+
+console.log(Web3)
+
+// setTimeout(3000)
+
+// web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8549"))
+// console.log(web3)
+
+// setTimeout(callEthereumNode, 60000)
+
+function callEthereumNode() {
+  console.log("TIMEOUT IS WORKING")
+  var coinbase = web3.eth.coinbase
+  console.log(coinbase)
+}
+// var coinbase = web3.eth.coinbase
+// console.log(coinbase)
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -16,7 +53,7 @@ function createWindow () {
   mainWindow.loadURL(`file://${__dirname}/index.html`)
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

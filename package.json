@@ -23,6 +23,13 @@
   },
   "homepage": "https://github.com/electron/electron-quick-start#readme",
   "devDependencies": {
+    "babel-polyfill": "^6.9.1",
     "electron-prebuilt": "^1.2.0"
+  },
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "web3": "^0.17.0-alpha",
+    "websocket": "^1.0.23"
   }
 }

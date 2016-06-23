@@ -2,18 +2,33 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Tribe</title>
+    <!-- <script type="text/javascript">
+		  System.import(`file://${__dirname}/app/main.js`);
+      alert("hello from script tag in header");
+	  </script> -->
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-  </body>
+    <div id='container'>
 
+    </div>
+
+    <ul>
+      <li id="wallet_link">wallet</li>
+      <li id="blockSync_link">block-sync</li>
+      <li>video-chat</li>
+    </ul>
+  </body>
   <script>
     // You can also require other files to run in this process
+    require('./app/appMain.js')
+    require('./ethereum.js')
     require('./renderer.js')
+    require('./webRTCConfig.js')
+    require('./server.js')
+
+    require('./app/wallet.js')
+    require('./app/blockSync.js')
   </script>
+
 </html>
